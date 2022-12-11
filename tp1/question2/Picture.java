@@ -19,7 +19,8 @@ public class Picture {
     private Square wall;
     private Square window;
     private Triangle roof;
-    private Circle sun;
+    private Circle sun ,sunyellow;
+    private Boolean terrefix;
 
     /**
      * Constructor for objects of class Picture
@@ -32,6 +33,8 @@ public class Picture {
      * Draw this picture.
      */
     public void draw() {
+        
+        terrefix = true ;
         wall = new Square();
         wall.moveVertical(80);
         wall.changeSize(100);
@@ -50,11 +53,23 @@ public class Picture {
         roof.makeVisible();
 
         sun = new Circle();
-        sun.changeColor("yellow");
+        sun.changeColor("blue");
         sun.moveHorizontal(180);
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+        if(terrefix == true ) {
+            sun.slowMoveVertical(400);
+        }
+        
+        
+        
+        sunyellow = new Circle();
+        sunyellow.changeColor("yellow");
+        sunyellow.moveHorizontal(-20);
+        sunyellow.moveVertical(-10);
+        sunyellow.changeSize(60);
+        sunyellow.makeVisible();
     }
 
     /**
@@ -82,5 +97,6 @@ public class Picture {
             sun.changeColor("yellow");
         }
     }
-
+    
+    
 }
